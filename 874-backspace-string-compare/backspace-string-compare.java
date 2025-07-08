@@ -20,14 +20,6 @@ class Solution {
             else
                 st2.push(c);
         }
-        System.out.println(st1);
-        if(st1.size()!=st2.size())
-            return false;
-        while(!st1.isEmpty()){
-            if(st1.pop()!=st2.pop())
-                return false;
-        }
-        
-        return true;
+        return st1.equals(st2);
     }
 }
