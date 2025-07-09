@@ -1,14 +1,14 @@
 class Solution {
     public int findLHS(int[] nums) {
         Arrays.sort(nums);
-        int maxlen=0;
-        for(int i=0;i<nums.length;i++){
-            int j=nums.length-1;
-            while(j>i&&(nums[j]-nums[i])!=1)
-                --j;
-            if(nums[j]-nums[i]==1)
-                maxlen=Math.max(maxlen,j-i+1);
-           
+        int maxlen=0,j=0;
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[i] - nums[j] > 1) {
+                j++;
+            }
+            if (nums[i] - nums[j] == 1) {
+            maxlen = Math.max(maxlen, i - j + 1);
+            }
         }
         return maxlen;
         
