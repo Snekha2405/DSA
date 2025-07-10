@@ -1,21 +1,13 @@
 class Solution {
     public int minSwaps(String s) {
-        Stack<Character> st = new Stack<>(); 
-        
-        for (char i : s.toCharArray()){
-           
-
-            if (i == '[')
-                st.push(i); // Push opening bracket to the stack
-            else if (!st.isEmpty() && st.peek() == '[')
-                st.pop(); // Excluding balanced pairs
-            else
-                st.push(i); // Push closing bracket to the stack
-           
+        int size = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == '[') 
+                size++;
+            else if (size > 0) 
+                size--;
         }
-        
-        int unbalancedPairs = st.size() / 2;
-        int swaps = (int) Math.ceil(unbalancedPairs / 2.0);
-        return swaps;
+        return (size + 1) / 2;
     }
 }
