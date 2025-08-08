@@ -6,14 +6,13 @@ class Solution {
         for(int r=0;r<nums.length;r++){
             while(set.contains(nums[r])){
                 set.remove(nums[l]);
-                sum-=nums[l];
-                l++;
+                sum-=nums[l++];
+                
 
             }
             set.add(nums[r]);
             sum+=nums[r];
-            if(sum>max)
-                max=sum;
+            max=sum>max?sum:max;
 
         }
         return max;
