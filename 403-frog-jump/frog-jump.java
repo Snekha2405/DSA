@@ -1,27 +1,23 @@
 class Solution {
     public boolean canCross(int[] stones) {
-        Map<Integer, Set<Integer>> dp = new HashMap<>();
-        for (int stone : stones) {
-            dp.put(stone, new HashSet<>());
-        }
-
-        // Step 2: The frog starts at position 0 with jump size 0
-        dp.get(0).add(0);
-
-        // Step 3: Iterate through stones in ascending order
-        for (int stone : stones) {
-            for (int jump : dp.get(stone)) {
-                // Try jumps of size jump-1, jump, jump+1
-                for (int nextJump = jump - 1; nextJump <= jump + 1; nextJump++) {
-                    if (nextJump > 0 && dp.containsKey(stone + nextJump)) {
-                        dp.get(stone + nextJump).add(nextJump);
-                    }
+        HashMap<Integer,Set<Integer>> map=new HashMap<>();
+        for(int i:stones)
+            map.put(i,new HashSet<>());
+        map.get(0).add(0);
+        for(int stone:stones){
+            for(int jump:map.get(stone)){
+                for(int nextjump=jump-1;nextjump<=jump+1;nextjump++){
+                    if(nextjump>0&&map.containsKey(stone+nextjump))
+                        map.get(stone+nextjump).add(nextjump);
                 }
             }
+            System.out.println(map.get(stone));
         }
+        if(map.get(stones[stones.length-1]).isEmpty())
+            return false;
+        return true;
 
-        // Step 4: If the last stone's set is non-empty, frog can reach it
-        return !dp.get(stones[stones.length - 1]).isEmpty();
+        
         
     }
 }
