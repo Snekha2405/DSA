@@ -2,7 +2,7 @@ class Solution {
     public int uniquePaths(int m, int n) {
         int[][] dp = new int[m][n];
         for (int[] row : dp) {
-            java.util.Arrays.fill(row, -1);
+            Arrays.fill(row, -1);
         }
         return helper(0, 0, m, n, dp);
     }
