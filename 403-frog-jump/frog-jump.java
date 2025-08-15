@@ -11,7 +11,7 @@ class Solution {
                         map.get(stone+nextjump).add(nextjump);
                 }
             }
-            System.out.println(map.get(stone));
+            // System.out.println(map.get(stone));
         }
         if(map.get(stones[stones.length-1]).isEmpty())
             return false;
