@@ -11,7 +11,7 @@ class Solution {
             maxCount=Math.max(maxCount,freq[index]);
             // System.out.println("MaxCount:"+maxCount);
             // System.out.println("right-left+1-maxCount:"+(right-left+1-maxCount));
-            if(right-left+1-maxCount>k)
+            while(right-left+1-maxCount>k)
             {
             // System.out.println("Ulla poiduchu right-left+1-maxCount "+(right-left+1-maxCount+"irukamodhu"));
                 freq[s.charAt(left)-'A']--;
