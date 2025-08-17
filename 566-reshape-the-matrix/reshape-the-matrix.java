@@ -15,8 +15,8 @@ class Solution {
         int k = 0;
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
-                ans[i][j] = arr.get(k);
-                k++; // ✅ now properly inside the loop
+                ans[i][j] = arr.get(k++);
+                // ✅ now properly inside the loop
             }
         }
         
