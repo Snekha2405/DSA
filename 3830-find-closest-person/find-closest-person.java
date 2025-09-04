@@ -3,8 +3,8 @@ class Solution {
         int dis1=Math.abs(x-z);
         int dis2=Math.abs(y-z);
         if(dis1<dis2) return 1;
-        else if(dis1==dis2) return 0;
-        else return 2;
+        if(dis1==dis2) return 0;
+        return 2;
         
     }
 }
