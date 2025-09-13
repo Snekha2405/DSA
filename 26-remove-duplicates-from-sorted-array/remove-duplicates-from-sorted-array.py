@@ -1,9 +1,6 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        if not nums:
-            return 0
         
-        # Pointer for unique elements
         k = 1  
         
         for i in range(1, len(nums)):
@@ -12,3 +9,7 @@ class Solution:
                 k += 1
         
         return k
+       
+
+
+
