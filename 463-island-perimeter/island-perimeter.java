@@ -10,10 +10,14 @@ class Solution {
                     perimeter += 4; // each land contributes 4 initially
 
                     // check top neighbor
-                    if (i > 0 && grid[i - 1][j] == 1) perimeter -= 2;
+                    if (i > 0 && grid[i - 1][j] == 1) perimeter -= 1;
 
                     // check left neighbor
-                    if (j > 0 && grid[i][j - 1] == 1) perimeter -= 2;
+                    if (j > 0 && grid[i][j - 1] == 1) perimeter -= 1;
+                    if (i <rows-1 && grid[i + 1][j] == 1) perimeter -= 1;
+
+                    // check left neighbor
+                    if (j <cols-1 && grid[i][j +1] == 1) perimeter -= 1;
                 }
             }
         }
